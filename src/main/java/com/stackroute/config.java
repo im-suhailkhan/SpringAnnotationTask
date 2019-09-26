@@ -7,6 +7,12 @@ import org.springframework.context.annotation.*;
 @PropertySource("classpath:info.properties")
 public class config {
 
+    @Bean
+    public BeanLifecycleDemoBean lifeBean(){
+        BeanLifecycleDemoBean beanLifecycleDemoBean= new BeanLifecycleDemoBean();
+        return beanLifecycleDemoBean;
+    }
+
     /*@Bean
 
     public Actor actorBean(){

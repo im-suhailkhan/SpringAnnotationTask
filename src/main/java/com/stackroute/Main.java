@@ -4,6 +4,7 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.ls.LSOutput;
@@ -13,7 +14,7 @@ public class Main {
     public static void main(String [] args){
         ApplicationContext context= new AnnotationConfigApplicationContext(config.class);
         //BeanFactory factory= new XmlBeanFactory(new ClassPathResource("beans.xml"));
-
+        ((AbstractApplicationContext)context).registerShutdownHook();
         Movie movie=context.getBean(Movie.class);
        // Actor actor= context.getBean("actor",Actor.class);
 
