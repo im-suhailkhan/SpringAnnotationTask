@@ -1,12 +1,14 @@
 package com.stackroute;
 
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
+public class BeanLifecycleDemoBean implements BeanPostProcessor {
 
     @PostConstruct
     public void customInit(){
@@ -19,16 +21,17 @@ public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
 
     }
 
+
+
     @Override
-    public void destroy() throws Exception {
-        System.out.println("inside destruction interface");
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        System.out.println("post before init");
+        return null;
     }
 
     @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("inside initialisation interface");
-
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        System.out.println("post after init");
+        return null;
     }
-
-
 }
