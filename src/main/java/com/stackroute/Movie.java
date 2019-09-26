@@ -2,14 +2,15 @@ package com.stackroute;
 
 import org.springframework.stereotype.Component;
 
-@Component("movie")
+//@Component("movie")
 public class Movie {
 
     private Actor actor;
 
-    public Movie(){
-        System.out.println("movie object created");
+    public Movie(Actor actor) {
+        this.actor = actor;
     }
+
     public void setActor(Actor actor) {
         this.actor = actor;
     }

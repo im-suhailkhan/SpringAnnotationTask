@@ -14,13 +14,26 @@ public class Main {
         ApplicationContext context= new AnnotationConfigApplicationContext(config.class);
         //BeanFactory factory= new XmlBeanFactory(new ClassPathResource("beans.xml"));
 
-        Movie movie=context.getBean("movie",Movie.class);
-        Actor actor= context.getBean("actor",Actor.class);
+        Movie movie=context.getBean(Movie.class);
+       // Actor actor= context.getBean("actor",Actor.class);
 
 
-        System.out.println("using appcontext " + actor.getGender());
-        System.out.println("using appcontext " + actor.getAge());
-        System.out.println("using appcontext " + actor.getName());
+        Movie beanA=context.getBean(Movie.class);
+        Movie beanB=context.getBean(Movie.class);
+       // Actor actor= context.getBean("actor",Actor.class);
+
+        //Actor actor1= factory.getBean("actor",Actor.class);
+
+        System.out.println("using appcontext " + movie.getActor().getGender());
+        System.out.println("using appcontext " + movie.getActor().getAge());
+        System.out.println("using appcontext " + movie.getActor().getName());
+
+        if(beanA == beanB)
+            System.out.println("beanA is equal to beanB ");
+        else
+            System.out.println("bean A is not equal to bean B");
+
+
 
        /* System.out.println("using beanFactory " + actor1.getGender());
         System.out.println("using beanFactory " + actor1.getName());
