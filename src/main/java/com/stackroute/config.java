@@ -7,7 +7,7 @@ import org.springframework.context.annotation.*;
 @PropertySource("classpath:info.properties")
 public class config {
 
-    @Bean
+    /*@Bean
 
     public Actor actorBean(){
         Actor actor=new Actor("suti","male",23);
@@ -21,7 +21,7 @@ public class config {
 
         Movie movie= new Movie(actorBean());
         return movie;
-    }
+    }*/
 
 
 

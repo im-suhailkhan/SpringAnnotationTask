@@ -18,8 +18,8 @@ public class Main {
        // Actor actor= context.getBean("actor",Actor.class);
 
 
-        Movie beanA=context.getBean(Movie.class);
-        Movie beanB=context.getBean(Movie.class);
+       /* Movie beanA=context.getBean(Movie.class);
+        Movie beanB=context.getBean(Movie.class);*/
        // Actor actor= context.getBean("actor",Actor.class);
 
         //Actor actor1= factory.getBean("actor",Actor.class);
@@ -28,10 +28,10 @@ public class Main {
         System.out.println("using appcontext " + movie.getActor().getAge());
         System.out.println("using appcontext " + movie.getActor().getName());
 
-        if(beanA == beanB)
+      /*  if(beanA == beanB)
             System.out.println("beanA is equal to beanB ");
         else
-            System.out.println("bean A is not equal to bean B");
+            System.out.println("bean A is not equal to bean B");*/
 
 
 

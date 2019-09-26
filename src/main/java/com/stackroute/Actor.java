@@ -3,23 +3,23 @@ package com.stackroute;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-//@Component("actor")
+@Component("actor")
 public class Actor {
 
-    //@Value("${actor.Name}")
+    @Value("${actor.Name}")
     private String name;
 
-    //@Value("${actor.Gender}")
+    @Value("${actor.Gender}")
     private String gender;
 
-    //@Value("${actor.Age}")
+    @Value("${actor.Age}")
     private int age;
 
-    public Actor(String name, String gender, int age) {
+   /* public Actor(String name, String gender, int age) {
         this.name = name;
         this.gender = gender;
         this.age = age;
-    }
+    }*/
 
     public Actor() {
         System.out.println("actor object created");
